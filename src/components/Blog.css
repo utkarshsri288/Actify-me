@@ -1,30 +1,35 @@
 .blog {
   padding: 120px 0;
-  background: linear-gradient(135deg, #a08bfa 0%, #ffffff 50%, #a08bfa 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #dbeafe 50%, #60a5fa 100%);
   position: relative;
 }
 
 .blog-content {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 0.7fr 2.3fr;
+  gap: 30px;
+  align-items: stretch;
   margin-top: 60px;
 }
 
 .blog-image-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: sticky;
   top: 100px;
+  height: 420px;
+  min-height: 400px;
+  margin-left: -20px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .blog-image {
   width: 100%;
-  height: auto;
-  max-width: 500px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
   animation: float 3s ease-in-out infinite;
 }
@@ -40,7 +45,7 @@
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -121,6 +126,12 @@
   margin-bottom: 20px;
   font-family: 'Inter', sans-serif;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .blog-card-footer {
@@ -137,16 +148,39 @@
   font-family: 'Inter', sans-serif;
 }
 
-.blog-read-more {
+.blog-writer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+}
+
+.blog-writer-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.blog-writer-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.blog-read-more-btn {
   font-size: 14px;
   font-weight: 600;
   color: var(--accent-blue);
-  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
+  padding: 0;
+  text-align: left;
 }
 
-.blog-read-more:hover {
+.blog-read-more-btn:hover {
   color: var(--accent-blue-hover);
   transform: translateX(5px);
 }
@@ -161,10 +195,14 @@
     position: relative;
     top: 0;
     order: -1;
+    height: 320px;
+    min-height: 320px;
+    margin-left: 0;
+    justify-content: center;
   }
 
   .blog-image {
-    max-width: 300px;
+    max-width: 100%;
   }
 
   .blog-grid {
@@ -181,8 +219,12 @@
     padding: 24px;
   }
 
+  .blog-image-wrapper {
+    height: 280px;
+  }
+
   .blog-image {
-    max-width: 250px;
+    max-width: 100%;
   }
 
   .blog-grid {

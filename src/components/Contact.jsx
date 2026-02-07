@@ -23,16 +23,6 @@ const Contact = () => {
     setFormData({ name: '', email: '', phone: '', message: '' })
   }
 
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(
-      'Hello! I am interested in learning more about Actifyme events.'
-    )
-    window.open(`https://wa.me/1234567890?text=${message}`, '_blank')
-  }
-
-  const handleCall = () => {
-    window.location.href = 'tel:+1234567890'
-  }
 
   return (
     <section id="contact" className="contact">
@@ -102,30 +92,6 @@ const Contact = () => {
                 Send Message
               </button>
             </form>
-          </div>
-
-          <div className="contact-actions fade-in-up">
-            <div className="action-card">
-              <div className="action-icon">💬</div>
-              <h3 className="action-title">Chat on WhatsApp</h3>
-              <p className="action-description">
-                Get instant responses and quick answers to your questions
-              </p>
-              <button className="btn btn-secondary action-btn" onClick={handleWhatsApp}>
-                WhatsApp Us
-              </button>
-            </div>
-
-            <div className="action-card">
-              <div className="action-icon">📞</div>
-              <h3 className="action-title">Call Us Now</h3>
-              <p className="action-description">
-                Speak directly with our team for personalized assistance
-              </p>
-              <button className="btn btn-primary action-btn" onClick={handleCall}>
-                Call Now
-              </button>
-            </div>
           </div>
         </div>
       </div>

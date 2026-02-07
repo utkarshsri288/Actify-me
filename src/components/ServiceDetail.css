@@ -1,0 +1,204 @@
+/* Hero section: same style as home page hero, taller */
+.service-detail-hero {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  background: url('../Gemini_Generated_Image_y3x0fly3x0fly3x0.png') left center/cover no-repeat;
+}
+
+.service-detail-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Hero content: same as home .hero-content, heading left */
+.service-detail-hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  padding: 80px 20px;
+  max-width: 1400px;
+}
+
+.service-detail-hero-content .service-detail-hero-text {
+  max-width: 420px;
+}
+
+/* Title: same as home .hero-title */
+.service-detail-hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+/* Subtitle: same white text style as home hero */
+.service-detail-hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* Content section: same as home page sections */
+.service-detail {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #60a5fa 0%, #dbeafe 50%, #60a5fa 100%);
+  position: relative;
+}
+
+/* Content area: same spacing as home sections */
+.service-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  z-index: 15;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Cards: same style as home page feature-card / mission-vision-item */
+.service-detail-card {
+  background: var(--bg-card);
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.service-detail-card:hover {
+  border-color: var(--accent-teal);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+.service-detail-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.service-detail-lead {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+.service-detail-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-detail-feature-item {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  padding: 12px 0 12px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.service-detail-feature-item:last-child {
+  border-bottom: none;
+}
+
+.service-detail-feature-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* CTA: same as home page button style */
+.service-detail-cta-wrap {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 10px;
+}
+
+.service-detail-cta-text {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+}
+
+.service-detail-cta-button {
+  text-decoration: none;
+}
+
+.service-detail-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow-glow);
+}
+
+@media (max-width: 1200px) {
+  .service-detail-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-detail-hero-content .service-detail-hero-text {
+    text-align: center;
+  }
+
+  .service-detail-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail-hero-title {
+    font-size: 36px;
+  }
+
+  .service-detail-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .service-detail {
+    padding: 80px 0;
+  }
+
+  .service-detail-card {
+    padding: 30px 24px;
+  }
+
+  .service-detail-card-title {
+    font-size: 20px;
+  }
+
+  .service-detail-lead {
+    font-size: 16px;
+  }
+}

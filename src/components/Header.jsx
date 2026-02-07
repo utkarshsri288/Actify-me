@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import logoImage from '../Sport_Event_Logo__actifyme__with_Motion_Figure-removebg-preview.png'
 import './Header.css'
 
 const Header = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +19,11 @@ const Header = ({ activeSection }) => {
   }, [])
 
   const scrollToSection = (sectionId) => {
+    if (!isHome) {
+      navigate(`/#${sectionId}`)
+      setIsMobileMenuOpen(false)
+      return
+    }
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -34,7 +43,7 @@ const Header = ({ activeSection }) => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo" onClick={() => scrollToSection('home')}>
+        <div className="logo" onClick={() => isHome ? scrollToSection('home') : navigate('/')}>
           <img src={logoImage} alt="Actifyme Logo" className="logo-image" />
         </div>
         
@@ -55,13 +64,6 @@ const Header = ({ activeSection }) => {
         </nav>
 
         <div className="header-right">
-          <div className="search-bar">
-            <input type="text" placeholder="Search..." className="search-input" />
-            <svg className="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-          </div>
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

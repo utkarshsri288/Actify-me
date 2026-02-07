@@ -1,0 +1,30 @@
+.new-page {
+  padding: 120px 0;
+  min-height: 60vh;
+}
+
+.new-page-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.new-page-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.new-page-link {
+  display: inline-block;
+  color: var(--accent-teal);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.new-page-link:hover {
+  opacity: 0.8;
+}

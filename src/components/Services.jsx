@@ -1,38 +1,14 @@
 import React from 'react'
-import basketImage from '../basket-removebg-preview.png'
+import { useNavigate } from 'react-router-dom'
+import { services } from '../data/servicesData'
 import './Services.css'
 
 const Services = () => {
-  const services = [
-    {
-      icon: '🏆',
-      title: 'Sports Tournament Management',
-      description:
-        'End-to-end management of competitive sports tournaments. From registration to awards, we handle every aspect with precision and passion.',
-      accent: 'sports',
-    },
-    {
-      icon: '🧘',
-      title: 'Yoga & Wellness Events',
-      description:
-        'Curated wellness experiences including yoga sessions, meditation workshops, and holistic health events that nurture mind, body, and soul.',
-      accent: 'yoga',
-    },
-    {
-      icon: '🏢',
-      title: 'Corporate / Community Events',
-      description:
-        'Custom event solutions for corporate teams and local communities. Team-building activities, community gatherings, and special occasions.',
-      accent: 'sports',
-    },
-    {
-      icon: '📍',
-      title: 'Venue & Logistics Planning',
-      description:
-        'Comprehensive venue selection, setup coordination, equipment management, and seamless logistics to ensure flawless event execution.',
-      accent: 'yoga',
-    },
-  ]
+  const navigate = useNavigate()
+
+  const handleReadMore = (service) => {
+    navigate(`/services/${service.slug}`)
+  }
 
   return (
     <section id="services" className="services">
@@ -48,20 +24,23 @@ const Services = () => {
           <div className="services-grid">
             {services.map((service, index) => (
               <div
-                key={index}
+                key={service.slug}
                 className={`service-card fade-in-up service-card-${service.accent}`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="service-icon">{service.icon}</div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
+                <button
+                  type="button"
+                  className="service-read-more"
+                  onClick={() => handleReadMore(service)}
+                >
+                  Read more
+                </button>
                 <div className="service-glow"></div>
               </div>
             ))}
-          </div>
-
-          <div className="services-image">
-            <img src={basketImage} alt="Basket" className="basket-image" />
           </div>
         </div>
       </div>

@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
+import ServiceDetailPage from './components/ServiceDetailPage'
 import Events from './components/Events'
 import Blog from './components/Blog'
+import BlogPostPage from './components/BlogPostPage'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import NewPage from './components/NewPage'
 import './App.css'
 
 function App() {
@@ -30,16 +34,33 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const homeContent = () => (
+      <>
+        <Header activeSection={activeSection} />
+        <Hero />
+        <About />
+        <Services />
+        <Events />
+        <Blog />
+        <Contact />
+        <Footer />
+      </>
+  )
+
   return (
     <div className="App">
-      <Header activeSection={activeSection} />
-      <Hero />
-      <About />
-      <Services />
-      <Events />
-      <Blog />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={homeContent()} />
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
+        <Route path="/blog/:postIndex" element={<BlogPostPage />} />
+        <Route path="/new-page" element={
+          <>
+            <Header activeSection="home" />
+            <NewPage />
+            <Footer />
+          </>
+        } />
+      </Routes>
     </div>
   )
 }
