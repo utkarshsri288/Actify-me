@@ -60,6 +60,7 @@
 .header-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 20px;
 }
 
@@ -158,6 +159,10 @@
   .header-container {
     grid-template-columns: auto 1fr;
     gap: 20px;
+  }
+
+  .header-right {
+    justify-self: end;
   }
 
   .nav {
