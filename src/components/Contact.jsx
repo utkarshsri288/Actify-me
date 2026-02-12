@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.css'
+
+const EMAILJS_SERVICE_ID = 'service_xthedoj'
+const EMAILJS_TEMPLATE_ID = 'template_a9qc9ru'
+const EMAILJS_PUBLIC_KEY = '-DEZd4L9QtTr8os2M'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +13,7 @@ const Contact = () => {
     phone: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -16,11 +22,34 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real app, this would send data to a backend
-    alert('Thank you for your message! We will get back to you soon.')
-    setFormData({ name: '', email: '', phone: '', message: '' })
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone_number: formData.phone || 'Not provided',
+      message: formData.message,
+      reply_to: formData.email,
+      to_name: 'ActifyMe Team',
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+      alert('Thank you for your message! We will get back to you soon.')
+      setFormData({ name: '', email: '', phone: '', message: '' })
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      const errorMessage =
+        typeof error === 'object' && error !== null && 'text' in error
+          ? error.text
+          : 'Sorry, we could not send your message right now. Please try again.'
+      alert(errorMessage)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
 
@@ -88,8 +117,8 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary form-submit">
-                Send Message
+              <button type="submit" className="btn btn-primary form-submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
