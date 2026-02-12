@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import logoImage from '../Sport_Event_Logo__actifyme__with_Motion_Figure-removebg-preview.png'
+import logoImage from '../Gemini_Generated_Image_qbyecyqbyecyqbye-removebg-preview.png'
 import './Header.css'
 
 const Header = ({ activeSection }) => {
