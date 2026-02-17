@@ -10,7 +10,7 @@ const Events = () => {
       time: '5:30 AM IST Onwards',
       type: 'sports',
       status: 'Register Now',
-      registerUrl: 'https://www.townscript.com/v2/widget/run-for-remembrance-2nd-edition-122440/booking/tickets',
+      registerUrl: 'https://www.townscript.com/e/run-for-remembrance-2nd-edition-122440',
       runs: [
         {
           title: 'CHIP RUN (12th Apr, Sunday)',
@@ -27,16 +27,45 @@ const Events = () => {
         },
       ],
     },
-    {
-      name: 'More Runs Coming Soon',
-      location: 'Stay tuned',
-      date: '2026-05-01',
-      type: 'sports',
-      status: 'Coming Soon',
-    },
   ]
 
   const pastEvents = [
+    {
+      name: 'Kids Fitness Summer Camp 2.0 - 2025 Edition',
+      location: 'Sector 76, Noida',
+      date: '2025-05-19',
+      time: "May 19 - Jun 13 | 7:00 AM IST",
+      type: 'yoga',
+      status: 'Completed',
+      description: 'A 4-week kids fitness camp (ages 5-12) featuring yoga, pranayama, meditation, running drills, bodyweight workouts, mini marathon, kho-kho, custom games, and healthy habit coaching.',
+    },
+    {
+      name: 'Run for Remembrance 2025',
+      location: 'Fortune World School, Sector 105, Noida',
+      date: '2025-04-13',
+      time: '5:30 AM IST Onwards',
+      type: 'sports',
+      status: 'Completed',
+      description: 'A tribute run honoring martyrs with 10 KM and 5 KM chip runs plus a 3 KM non-chip fun run. Included medals, chip timing bibs, refreshments, hydration, medical support, Zumba sessions, and winner trophies.',
+    },
+    {
+      name: "Noida's Unity Run Event - 5th Edition",
+      location: 'Noida',
+      date: '2025-10-02',
+      time: '5:30 AM IST Onwards',
+      type: 'sports',
+      status: 'Completed',
+      description: 'Categories: 10 KM and 5 KM chip run, plus 3 KM non-chip run. Featured premium dry-fit T-shirts, medals, hydration and medical support, Zumba sessions, photography, and winner trophies/gifts.',
+    },
+    {
+      name: 'Swatantra Spirit Run 2025',
+      location: 'K.R. Mangalam World School, Knowledge Park V, Noida Extension',
+      date: '2025-08-10',
+      time: '5:30 AM IST Onwards',
+      type: 'sports',
+      status: 'Completed',
+      description: 'A freedom-themed run with 10 KM and 5 KM chip categories plus a 5 KM non-chip fun run. Included chip timing bibs, participation certificates, refreshments, hydration, medical support, Zumba, and event media coverage.',
+    },
     {
       name: "Noida's Unity Run Event - 4th Edition",
       location: 'Noida, Sector 76 (near Amrapali Princely Estate)',
@@ -141,7 +170,7 @@ const Events = () => {
           </div>
 
           <div className="events-section">
-            <h3 className="events-section-title">Past Events</h3>
+            <h3 className="events-section-title">Some of our Past Events</h3>
             <div className="events-grid">
               {pastEvents.map((event, index) => (
                 <div

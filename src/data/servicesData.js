@@ -1,18 +1,18 @@
 export const services = [
   {
-    slug: 'running-tournament',
+    slug: 'runnig-eevent',
     icon: '🏃‍♂️',
-    title: 'Running Tournament',
+    title: 'runnig eevent',
     description:
-      'Organize and manage competitive running events including marathons, half-marathons, 5K runs, and track meets.',
+      'Plan and execute engaging running eevents, from fun runs to marathons, with smooth coordination and runner-first experiences.',
     fullDescription:
-      'From community 5K fun runs to professional marathons, we handle every detail of your running event. Our team manages registration, timing systems, course design, safety protocols, and post-race celebrations so you can focus on the runners.',
+      'Our runnig eevent service is designed to deliver safe, exciting, and well-organized race days for all age groups and fitness levels. We handle registrations, route planning, on-ground operations, safety teams, hydration points, and results management so your participants enjoy a seamless and memorable experience.',
     features: [
-      'Marathon, half-marathon, 5K & 10K event planning',
-      'Chip timing and results management',
-      'Course design and safety coordination',
-      'Registration and participant communication',
-      'Aid stations and medical support',
+      'Fun run, 5K, 10K, and marathon planning',
+      'Online registration and participant updates',
+      'Route mapping, permissions, and safety setup',
+      'Hydration stations and on-site support teams',
+      'Timing, leaderboard, and result announcements',
     ],
     accent: 'sports',
   },
@@ -34,9 +34,9 @@ export const services = [
     accent: 'sports',
   },
   {
-    slug: 'yoga-wellness-events',
+    slug: 'yoga-mindfulness-workshops',
     icon: '🧘',
-    title: 'Yoga & Wellness Events',
+    title: 'Yoga & Mindfulness Workshops',
     description:
       'Curated wellness experiences including yoga sessions, meditation workshops, and holistic health events that nurture mind, body, and soul.',
     fullDescription:
@@ -51,36 +51,36 @@ export const services = [
     accent: 'yoga',
   },
   {
-    slug: 'corporate-community-events',
+    slug: 'corporate-wellness-programs',
     icon: '🏢',
-    title: 'Corporate / Community Events',
+    title: 'Corporate Wellness Programs',
     description:
-      'Custom event solutions for corporate teams and local communities. Team-building activities, community gatherings, and special occasions.',
+      'Wellness-focused programs for organizations, including fitness sessions, stress management workshops, and team wellness challenges.',
     fullDescription:
-      'Strengthen teams and bring communities together with tailored events. We design corporate offsites, team-building activities, community festivals, and special occasions that align with your goals and create lasting memories.',
+      'Support employee health and workplace wellbeing with customized corporate wellness programs. We design and manage yoga sessions, fitness classes, mindfulness workshops, step challenges, and wellness campaigns that improve engagement, energy, and team morale.',
     features: [
-      'Team-building and corporate retreats',
-      'Community festivals and gatherings',
-      'Custom activity design and facilitation',
-      'Catering and logistics coordination',
-      'Photography and recap packages',
+      'On-site and virtual fitness sessions',
+      'Yoga, meditation, and mindfulness workshops',
+      'Employee wellness challenges and tracking',
+      'Health talks on nutrition and lifestyle',
+      'Program planning, scheduling, and reporting',
     ],
     accent: 'sports',
   },
   {
-    slug: 'venue-logistics-planning',
+    slug: 'calisthenics-body-weight-trainings',
     icon: '📍',
-    title: 'Venue & Logistics Planning',
+    title: 'Calisthenics & Body Weight Trainings',
     description:
-      'Comprehensive venue selection, setup coordination, equipment management, and seamless logistics to ensure flawless event execution.',
+      'Structured calisthenics and body weight training sessions focused on strength, mobility, endurance, and functional fitness.',
     fullDescription:
-      'The right venue and smooth logistics make or break an event. We handle venue sourcing, layout design, equipment rental, power and connectivity, signage, and on-site coordination so your event runs without a hitch.',
+      'Build real-world strength and control through guided calisthenics and body weight training programs. Our sessions are designed for beginners to advanced participants, with progressive routines, coach-led form correction, and performance tracking to ensure safe and consistent improvement.',
     features: [
-      'Venue sourcing and site visits',
-      'Layout and floor plan design',
-      'Equipment rental and setup',
-      'Power, Wi-Fi, and technical requirements',
-      'On-site logistics and crew management',
+      'Beginner to advanced calisthenics progressions',
+      'Push, pull, core, and mobility training modules',
+      'Coach-led form correction and injury prevention',
+      'Group classes and personalized workout plans',
+      'Performance assessment and progress tracking',
     ],
     accent: 'yoga',
   },

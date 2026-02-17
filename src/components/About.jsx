@@ -10,8 +10,8 @@ const About = () => {
     },
     {
       icon: '⚽',
-      title: 'Sports Expertise',
-      description: 'Years of experience managing competitive sports tournaments',
+      title: 'Sports & Running Expertise',
+      description: 'Years of experience managing competitive sports tournaments and running events',
     },
     {
       icon: '🧘',
@@ -59,24 +59,24 @@ const About = () => {
         <div className="about-content">
           <div className="about-text fade-in-up">
             <p className="about-intro">
-              Actifyme is a premier event management brand specializing in organizing
-              high-energy sports tournaments and transformative yoga & wellness events.
-              We believe in creating experiences that inspire, energize, and bring
-              communities together.
+              Welcome to our fitness community! With years of certified experience, we
+              offer exceptional experiences in bodyweight training, calisthenics, fun
+              challenges, yoga, Zumba, Tabata, Pilates, marathon and cycling events,
+              boot camps, and fitness treks. Join us for a healthier life!
             </p>
 
             <div className="mission-vision">
               <div className="mission-vision-item">
                 <h3 className="mv-title">Our Mission</h3>
                 <p className="mv-text">
-                  To create exceptional sporting and wellness experiences that foster
+                  To create exceptional fitness and wellness experiences that foster
                   community, promote healthy competition, and inspire personal growth.
                 </p>
               </div>
               <div className="mission-vision-item">
                 <h3 className="mv-title">Our Vision</h3>
                 <p className="mv-text">
-                  To become the leading event management platform that seamlessly
+                  To become the leading fitness and wellness platform that seamlessly
                   connects sports enthusiasts and wellness seekers through unforgettable
                   experiences.
                 </p>

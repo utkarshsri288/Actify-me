@@ -79,49 +79,11 @@
   background: rgba(0, 0, 0, 0.9);
 }
 
-.social-icon-text {
-  color: white;
-  font-weight: 700;
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
+.social-icon-left svg {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
 }
-
-.twitter-icon {
-  width: 24px;
-  height: 24px;
-  color: white;
-}
-
-/* Chat Icon - Bottom Right */
-.chat-icon {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background: #000000;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.chat-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.chat-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
 
 @media (max-width: 1200px) {
   .hero-content {
@@ -151,15 +113,4 @@
     display: none;
   }
 
-  .chat-icon {
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .chat-icon svg {
-    width: 24px;
-    height: 24px;
-  }
 }

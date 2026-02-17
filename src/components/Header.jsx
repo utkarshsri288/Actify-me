@@ -35,9 +35,9 @@ const Header = ({ activeSection }) => {
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'ABOUT' },
     { id: 'services', label: 'SERVICES' },
-    { id: 'contact', label: 'CONTACT' },
     { id: 'events', label: 'Events' },
     { id: 'blog', label: 'Blog' },
+    { id: 'contact', label: 'CONTACT' },
   ]
 
   return (

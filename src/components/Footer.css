@@ -122,11 +122,21 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+}
+
 .social-icon:hover {
   transform: translateY(-3px);
   border-color: var(--accent-teal);
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
   background: var(--bg-secondary);
+}
+
+.social-icon:hover svg {
+  color: var(--accent-teal);
 }
 
 .footer-bottom {

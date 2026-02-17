@@ -11,6 +11,7 @@ const Contact = () => {
     name: '',
     email: '',
     phone: '',
+    interest: '',
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -29,6 +30,7 @@ const Contact = () => {
       from_name: formData.name,
       from_email: formData.email,
       phone_number: formData.phone || 'Not provided',
+      interest: formData.interest || 'General Inquiry',
       message: formData.message,
       reply_to: formData.email,
       to_name: 'ActifyMe Team',
@@ -39,7 +41,7 @@ const Contact = () => {
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
       alert('Thank you for your message! We will get back to you soon.')
-      setFormData({ name: '', email: '', phone: '', message: '' })
+      setFormData({ name: '', email: '', phone: '', interest: '', message: '' })
     } catch (error) {
       console.error('EmailJS error:', error)
       const errorMessage =
@@ -102,6 +104,25 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="+1 (555) 123-4567"
                 />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="interest">Interest</label>
+                <select
+                  id="interest"
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="" disabled>Select your interest</option>
+                  <option value="Running Events">Running Events</option>
+                  <option value="Yoga & Mindfulness Workshops">Yoga & Mindfulness Workshops</option>
+                  <option value="Corporate Wellness Programs">Corporate Wellness Programs</option>
+                  <option value="Calisthenics & Body Weight Trainings">Calisthenics & Body Weight Trainings</option>
+                  <option value="Box Cricket">Box Cricket</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
               </div>
 
               <div className="form-group">
