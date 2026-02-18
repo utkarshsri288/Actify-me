@@ -167,24 +167,6 @@
   font-weight: 600;
 }
 
-.blog-read-more-btn {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent-blue);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s ease;
-  padding: 0;
-  text-align: left;
-}
-
-.blog-read-more-btn:hover {
-  color: var(--accent-blue-hover);
-  transform: translateX(5px);
-}
-
 @media (max-width: 968px) {
   .blog-content {
     grid-template-columns: 1fr;

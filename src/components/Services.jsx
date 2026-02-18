@@ -1,15 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { services } from '../data/servicesData'
 import './Services.css'
 
 const Services = () => {
-  const navigate = useNavigate()
-
-  const handleReadMore = (service) => {
-    navigate(`/services/${service.slug}`)
-  }
-
   return (
     <section id="services" className="services">
       <div className="container">
@@ -31,13 +24,6 @@ const Services = () => {
                 <div className="service-icon">{service.icon}</div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
-                <button
-                  type="button"
-                  className="service-read-more"
-                  onClick={() => handleReadMore(service)}
-                >
-                  Read more
-                </button>
                 <div className="service-glow"></div>
               </div>
             ))}
