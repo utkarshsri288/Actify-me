@@ -1,9 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import blogImage from '../runningactify.png'
 import { blogPosts } from '../data/blogPostsData'
 import './Blog.css'
 
 const Blog = () => {
+  const navigate = useNavigate()
+
+  const handleReadMore = (index) => {
+    navigate(`/blog/${index}`)
+  }
+
   return (
     <section id="blog" className="blog">
       <div className="container">
@@ -39,6 +46,12 @@ const Blog = () => {
                 <p className="blog-excerpt">{post.excerpt}</p>
                 <div className="blog-card-footer">
                   <span className="blog-date">{post.date}</span>
+                  <button 
+                    className="blog-read-more-btn"
+                    onClick={() => handleReadMore(index)}
+                  >
+                    Read More →
+                  </button>
                 </div>
               </article>
             ))}
