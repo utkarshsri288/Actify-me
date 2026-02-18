@@ -1,12 +1,12 @@
 export const services = [
   {
-    slug: 'runnig-eevent',
+    slug: 'running-events',
     icon: '🏃‍♂️',
-    title: 'runnig eevent',
+    title: 'Running Events',
     description:
-      'Plan and execute engaging running eevents, from fun runs to marathons, with smooth coordination and runner-first experiences.',
+    'Plan and execute engaging running events, from fun runs to marathons, with smooth coordination and runner-first experiences.',
     fullDescription:
-      'Our runnig eevent service is designed to deliver safe, exciting, and well-organized race days for all age groups and fitness levels. We handle registrations, route planning, on-ground operations, safety teams, hydration points, and results management so your participants enjoy a seamless and memorable experience.',
+      'Our running events service is designed to deliver safe, exciting, and well-organized race days for all age groups and fitness levels. We handle registrations, route planning, on-ground operations, safety teams, hydration points, and results management so your participants enjoy a seamless and memorable experience.',
     features: [
       'Fun run, 5K, 10K, and marathon planning',
       'Online registration and participant updates',
