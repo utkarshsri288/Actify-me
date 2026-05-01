@@ -4,32 +4,26 @@ import './Events.css'
 const Events = () => {
   const upcomingEvents = [
     {
+      name: 'Swatantra Spirit Run - 2nd Edition',
+      location: 'K.R. Mangalam School, Noida Extension',
+      date: '2026-08-09',
+      time: '5:30 AM IST Onwards',
+      type: 'sports',
+      status: 'Coming Soon',
+      description: 'Our freedom-themed run returns for a second edition. Expect chip-timed distances, medals, refreshments, hydration and medical support, Zumba, and more — full categories and registration details will be posted here soon.',
+    },
+  ]
+
+  const pastEvents = [
+    {
       name: 'Run for Remembrance - 2nd Edition',
       location: 'Scout Cricket Academy',
       date: '2026-04-12',
       time: '5:30 AM IST Onwards',
       type: 'sports',
-      status: 'Register Now',
-      registerUrl: 'https://www.townscript.com/e/run-for-remembrance-2nd-edition-122440',
-      runs: [
-        {
-          title: 'CHIP RUN (12th Apr, Sunday)',
-          categories: [
-            { name: '10 KM Chip Run', original: 1500, price: 750, discount: '50% OFF', features: 'Timing Chip / Refreshment / Medal / Hydration / Medical Support / Route Support / High Quality T-shirt / Photography / Zumba / Fitness Challenges / Awards / Trophies / Gifts' },
-            { name: '5 KM Chip Run', original: 1200, price: 600, discount: '50% OFF', features: 'Timing Chip / Refreshment / Medal / Hydration / Medical Support / Route Support / High Quality T-shirt / Photography / Zumba / Fitness Challenges / Awards / Trophies / Gifts' },
-          ],
-        },
-        {
-          title: 'NON CHIP RUN (12th Apr, Sunday)',
-          categories: [
-            { name: '3 KM Non Chip Run', original: 1000, price: 500, discount: '50% OFF', features: 'Refreshment / Medal / Hydration / Medical Support / Route Support / High Quality T-shirt / Photography / Zumba / Fitness Challenges' },
-          ],
-        },
-      ],
+      status: 'Completed',
+      description: 'A heartfelt tribute run featuring 10 KM and 5 KM chip-timed categories along with a 3 KM non-chip fun run. Participants enjoyed medals, premium T-shirts, refreshments, hydration, medical support, Zumba sessions, fitness challenges, and trophies for winners.',
     },
-  ]
-
-  const pastEvents = [
     {
       name: 'Kids Fitness Summer Camp 2.0 - 2025 Edition',
       location: 'Sector 76, Noida',
@@ -108,6 +102,16 @@ const Events = () => {
         <div className="events-content">
           <div className="events-section">
             <h3 className="events-section-title">Upcoming Events</h3>
+            {upcomingEvents.length === 0 ? (
+              <div className="events-empty fade-in-up">
+                <div className="events-empty-icon">🗓️</div>
+                <h4 className="events-empty-title">New Events Coming Soon</h4>
+                <p className="events-empty-text">
+                  We're putting the finishing touches on our next experience.
+                  Stay tuned — registrations will open here shortly.
+                </p>
+              </div>
+            ) : (
             <div className="events-grid">
               {upcomingEvents.map((event, index) => (
                 <div
@@ -115,6 +119,15 @@ const Events = () => {
                   className={`event-card fade-in-up event-card-${event.type}`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
+                  {event.bannerImage && (
+                    <div className="event-card-banner">
+                      <img
+                        src={event.bannerImage}
+                        alt={`${event.name} announcement`}
+                        className="event-card-banner-image"
+                      />
+                    </div>
+                  )}
                   <div className="event-header">
                     <span className={`event-badge event-badge-${event.type}`}>
                       {event.status}
@@ -125,15 +138,20 @@ const Events = () => {
                   </div>
                   <h4 className="event-name">{event.name}</h4>
                   <div className="event-details">
-                    <div className="event-detail-item">
-                      <span className="event-detail-icon">📅</span>
-                      <span>{formatDate(event.date)}{event.time ? ` | ${event.time}` : ''}</span>
-                    </div>
+                    {event.date && (
+                      <div className="event-detail-item">
+                        <span className="event-detail-icon">📅</span>
+                        <span>{formatDate(event.date)}{event.time ? ` | ${event.time}` : ''}</span>
+                      </div>
+                    )}
                     <div className="event-detail-item">
                       <span className="event-detail-icon">📍</span>
                       <span>{event.location}</span>
                     </div>
                   </div>
+                  {event.description && (
+                    <p className="event-description">{event.description}</p>
+                  )}
                   {event.runs && (
                     <div className="event-runs">
                       {event.runs.map((run, runIndex) => (
@@ -167,6 +185,7 @@ const Events = () => {
                 </div>
               ))}
             </div>
+            )}
           </div>
 
           <div className="events-section">
